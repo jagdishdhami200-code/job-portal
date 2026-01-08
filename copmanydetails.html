@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudSphere Technologies - Corporate Profile</title>
+    <!-- Tailwind CSS for Layout -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+
+        /* Custom Banner Pattern */
+        .brand-banner {
+            background: linear-gradient(135deg, #2563EB 0%, #0F172A 100%); /* Blue to Dark Slate */
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .brand-banner::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -10%;
+            width: 800px;
+            height: 800px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+        }
+        
+        .brand-banner::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            right: -5%;
+            width: 500px;
+            height: 500px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+        }
+
+        /* The Floating Logo */
+        .profile-logo-container {
+            margin-top: -80px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        /* Tab Active State Styling */
+        .tab-btn {
+            position: relative;
+            color: #6B7280;
+            transition: all 0.2s ease;
+        }
+        
+        .tab-btn:hover {
+            color: #111827;
+        }
+
+        .tab-btn.active {
+            color: #2563EB; /* Blue-600 */
+            font-weight: 600;
+        }
+
+        .tab-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: #2563EB;
+            border-top-left-radius: 2px;
+            border-top-right-radius: 2px;
+        }
+
+        /* Job Card Hover */
+        .job-card {
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .job-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Animation */
+        .animate-fade-in {
+            animation: fadeIn 0.3s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Custom Scrollbar for horizontal tabs */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="min-h-screen pb-12">
+
+    <!-- Main Container -->
+    <main class="max-w-6xl mx-auto bg-white shadow-2xl min-h-screen md:min-h-0 md:my-8 md:rounded-xl overflow-hidden">
+        
+        <!-- STEP A: The Hero Banner -->
+        <div class="brand-banner h-56 md:h-80 w-full flex flex-col justify-between p-6 md:p-8">
+            <!-- Top Bar -->
+            <div class="flex justify-between items-center z-10">
+                <button class="bg-black/20 hover:bg-black/30 text-white p-2.5 rounded-full backdrop-blur-sm transition">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </button>
+                <div class="flex gap-3">
+                    <button class="bg-black/20 hover:bg-black/30 text-white px-4 py-2 rounded-full backdrop-blur-sm transition text-sm font-medium flex items-center gap-2">
+                        <i class="fa-solid fa-share-nodes"></i>
+                        Share
+                    </button>
+                </div>
+            </div>
+
+            <!-- Banner Awards/Badges -->
+            <div class="flex justify-end items-end z-10 mt-auto">
+                <div class="flex gap-3">
+                    <div class="bg-white/10 backdrop-blur-md border border-white/20 p-3 rounded-lg flex items-center gap-3">
+                        <div class="bg-gradient-to-r from-blue-400 to-cyan-400 text-white font-bold p-1.5 rounded text-xs shadow-sm">
+                            🏆 TOP EDTECH
+                        </div>
+                        <div class="text-white text-xs md:text-sm font-medium leading-tight">
+                            Excellence in Education<br><span class="opacity-80">EdTech Asia Summit</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- STEP B & C: Profile Header Section -->
+        <div class="px-6 md:px-10 pb-6">
+            <div class="flex flex-col md:flex-row gap-6 items-start relative">
+                
+                <!-- STEP B: The Floating Logo -->
+                <div class="profile-logo-container w-32 h-32 md:w-40 md:h-40 bg-white rounded-2xl p-1.5 flex-shrink-0 z-20">
+                    <div class="w-full h-full bg-slate-900 rounded-xl flex items-center justify-center overflow-hidden border border-gray-100 shadow-inner">
+                        <i class="fa-solid fa-graduation-cap text-4xl md:text-5xl text-blue-500"></i>
+                    </div>
+                </div>
+
+                <!-- STEP C: The Info Box -->
+                <div class="pt-4 md:pt-6 flex-grow w-full">
+                    <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
+                        
+                        <!-- Company Details -->
+                        <div class="flex-grow">
+                            <div class="flex items-center gap-3 flex-wrap">
+                                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight">StudSphere Technologies</h1>
+                                <span class="bg-blue-100 text-blue-700 text-xs font-bold px-2 py-0.5 rounded-full border border-blue-200 flex items-center gap-1">
+                                    <i class="fa-solid fa-check-circle text-[10px]"></i>
+                                    Verified
+                                </span>
+                                <span class="bg-gray-100 text-gray-600 text-xs font-medium px-2 py-0.5 rounded border border-gray-200">Est. 2020</span>
+                            </div>
+                            
+                            <p class="text-gray-600 text-base mt-2 font-medium">Democratizing Learning & Employment Access</p>
+                            
+                            <div class="flex flex-wrap items-center gap-x-6 gap-y-2 mt-3 text-sm text-gray-500">
+                                <span class="flex items-center gap-1.5 hover:text-blue-600 transition cursor-pointer">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    Kathmandu, Nepal
+                                </span>
+                                <span class="flex items-center gap-1.5">
+                                    <i class="fa-solid fa-users"></i>
+                                    50-200 Employees
+                                </span>
+                                <a href="#" class="flex items-center gap-1.5 text-blue-600 hover:underline">
+                                    <i class="fa-solid fa-globe"></i>
+                                    studsphere.com
+                                </a>
+                            </div>
+
+                            <!-- Chips -->
+                            <div class="flex flex-wrap gap-2 mt-4">
+                                <span class="px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-700 text-xs font-semibold rounded-full border border-blue-200 cursor-pointer transition">🎓 EdTech</span>
+                                <span class="px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-700 text-xs font-semibold rounded-full border border-blue-200 cursor-pointer transition">🧩 Job Marketplace</span>
+                                <span class="px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-700 text-xs font-semibold rounded-full border border-blue-200 cursor-pointer transition">🧑‍🏫 Mentorship</span>
+                                <span class="px-3 py-1 bg-blue-50 hover:bg-blue-100 text-blue-700 text-xs font-semibold rounded-full border border-blue-200 cursor-pointer transition">📊 Analytics</span>
+                            </div>
+                        </div>
+
+                        <!-- CTA Buttons -->
+                        <div class="flex gap-3 w-full lg:w-auto mt-4 lg:mt-0 flex-shrink-0">
+                            <button id="followBtn" onclick="toggleFollow()" class="flex-1 lg:flex-none px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-sm transition flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-plus"></i>
+                                <span>Follow</span>
+                            </button>
+                            <button class="px-4 py-3 border border-gray-300 hover:bg-gray-50 text-gray-700 font-medium rounded-lg transition" title="More Options">
+                                <i class="fa-solid fa-ellipsis"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Tabs -->
+            <div class="mt-10 border-b border-gray-200 sticky top-0 bg-white z-30 pt-2">
+                <nav class="flex gap-8 overflow-x-auto no-scrollbar" aria-label="Tabs">
+                    <button onclick="switchTab('overview')" id="tab-overview" class="tab-btn active pb-4 text-sm font-medium whitespace-nowrap px-1">Overview</button>
+                    <button onclick="switchTab('services')" id="tab-services" class="tab-btn pb-4 text-sm font-medium whitespace-nowrap px-1">Products & Services</button>
+                    <button onclick="switchTab('careers')" id="tab-careers" class="tab-btn pb-4 text-sm font-medium whitespace-nowrap px-1">Jobs & Careers <span class="ml-1 bg-blue-100 text-blue-700 py-0.5 px-2 rounded-full text-xs font-bold">3</span></button>
+                    <button onclick="switchTab('reviews')" id="tab-reviews" class="tab-btn pb-4 text-sm font-medium whitespace-nowrap px-1">Reviews <span class="ml-1 text-gray-400 text-xs">4.8★</span></button>
+                    <button onclick="switchTab('life')" id="tab-life" class="tab-btn pb-4 text-sm font-medium whitespace-nowrap px-1">Life at StudSphere</button>
+                </nav>
+            </div>
+
+            <!-- Tab Content Area -->
+            <div class="mt-8 min-h-[400px]">
+                
+                <!-- === CONTENT: OVERVIEW === -->
+                <div id="content-overview" class="tab-content animate-fade-in">
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                        <!-- Left Column: Text & Video -->
+                        <div class="lg:col-span-2 space-y-8">
+                            
+                            <!-- Introduction & Video Section -->
+                            <section>
+                                <h2 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                                    Who We Are
+                                </h2>
+                                <p class="text-gray-600 leading-relaxed text-lg mb-6">
+                                    StudSphere Technologies is built with a mission to democratize learning and employment access. Our platform integrates career readiness programs, verified job listings, employer partnerships, and student development tools — helping learners grow into future-ready professionals.
+                                </p>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                                    <div class="bg-blue-50 p-5 rounded-xl border border-blue-100">
+                                        <h3 class="font-bold text-blue-800 mb-2"><i class="fa-solid fa-rocket mr-2"></i>Our Mission</h3>
+                                        <p class="text-sm text-gray-600">To create equal access to quality education, skills, and employment opportunities for students across emerging markets.</p>
+                                    </div>
+                                    <div class="bg-indigo-50 p-5 rounded-xl border border-indigo-100">
+                                        <h3 class="font-bold text-indigo-800 mb-2"><i class="fa-solid fa-eye mr-2"></i>Our Vision</h3>
+                                        <p class="text-sm text-gray-600">A world where every learner has the tools, guidance, and opportunities to build a meaningful career.</p>
+                                    </div>
+                                </div>
+
+                                <!-- Core Values -->
+                                <h3 class="text-lg font-bold text-gray-900 mb-4">Core Values</h3>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="flex items-start gap-3">
+                                        <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center text-green-600 flex-shrink-0"><i class="fa-solid fa-shield-heart"></i></div>
+                                        <div>
+                                            <h4 class="font-bold text-sm text-gray-800">Integrity</h4>
+                                            <p class="text-xs text-gray-500">Transparency & accountability</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 flex-shrink-0"><i class="fa-solid fa-lightbulb"></i></div>
+                                        <div>
+                                            <h4 class="font-bold text-sm text-gray-800">Innovation</h4>
+                                            <p class="text-xs text-gray-500">Challenging limits</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <div class="w-8 h-8 rounded-full bg-pink-100 flex items-center justify-center text-pink-600 flex-shrink-0"><i class="fa-solid fa-hand-holding-heart"></i></div>
+                                        <div>
+                                            <h4 class="font-bold text-sm text-gray-800">Empathy</h4>
+                                            <p class="text-xs text-gray-500">Learners first</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <div class="w-8 h-8 rounded-full bg-orange-100 flex items-center justify-center text-orange-600 flex-shrink-0"><i class="fa-solid fa-people-group"></i></div>
+                                        <div>
+                                            <h4 class="font-bold text-sm text-gray-800">Collaboration</h4>
+                                            <p class="text-xs text-gray-500">Growing together</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Awards Section -->
+                                <div class="mt-8 pt-8 border-t border-gray-100">
+                                    <h3 class="text-lg font-bold text-gray-900 mb-4">Awards & Recognition</h3>
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                        <div class="flex items-start gap-3 p-4 bg-yellow-50 rounded-xl border border-yellow-100">
+                                            <div class="text-2xl">🏆</div>
+                                            <div>
+                                                <h4 class="font-bold text-gray-900 text-sm">Best EdTech Startup</h4>
+                                                <p class="text-xs text-gray-600">ICT Awards 2024</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start gap-3 p-4 bg-blue-50 rounded-xl border border-blue-100">
+                                            <div class="text-2xl">💎</div>
+                                            <div>
+                                                <h4 class="font-bold text-gray-900 text-sm">Top Employer</h4>
+                                                <p class="text-xs text-gray-600">LinkedIn Excellence Awards</p>
+                                            </div>
+                                        </div>
+                                         <div class="flex items-start gap-3 p-4 bg-purple-50 rounded-xl border border-purple-100">
+                                            <div class="text-2xl">🚀</div>
+                                            <div>
+                                                <h4 class="font-bold text-gray-900 text-sm">Innovation Award</h4>
+                                                <p class="text-xs text-gray-600">South Asia Tech Summit</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+
+                        <!-- Right Column: Stats & Info -->
+                        <div class="space-y-6">
+                            <!-- Stats Widget -->
+                            <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-sm">
+                                <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4">Our Impact</h3>
+                                <div class="space-y-6">
+                                    <div>
+                                        <div class="flex items-baseline gap-1">
+                                            <span class="text-3xl font-bold text-gray-900">100+</span>
+                                            <span class="text-blue-600 text-xs font-bold">Partners</span>
+                                        </div>
+                                        <div class="text-sm text-gray-600">Colleges & Institutions</div>
+                                    </div>
+                                    <div class="w-full h-px bg-gray-100"></div>
+                                    <div>
+                                        <div class="text-3xl font-bold text-gray-900">50K+</div>
+                                        <div class="text-sm text-gray-600">Active Students</div>
+                                    </div>
+                                    <div class="w-full h-px bg-gray-100"></div>
+                                    <div>
+                                        <div class="text-3xl font-bold text-gray-900">500+</div>
+                                        <div class="text-sm text-gray-600">Companies Hiring</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Contact Widget -->
+                            <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-sm">
+                                <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4">Contact Us</h3>
+                                <ul class="space-y-4">
+                                    <li class="flex items-start gap-3">
+                                        <div class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 flex-shrink-0">
+                                            <i class="fa-solid fa-globe"></i>
+                                        </div>
+                                        <div>
+                                            <p class="text-xs text-gray-500 font-semibold uppercase">Website</p>
+                                            <a href="#" class="text-sm text-blue-600 font-medium hover:underline">www.studsphere.com</a>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <div class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 flex-shrink-0">
+                                            <i class="fa-solid fa-envelope"></i>
+                                        </div>
+                                        <div>
+                                            <p class="text-xs text-gray-500 font-semibold uppercase">Email</p>
+                                            <a href="mailto:info@studsphere.com" class="text-sm text-gray-700 font-medium hover:text-blue-600">info@studsphere.com</a>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <div class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 flex-shrink-0">
+                                            <i class="fa-solid fa-phone"></i>
+                                        </div>
+                                        <div>
+                                            <p class="text-xs text-gray-500 font-semibold uppercase">Phone</p>
+                                            <span class="text-sm text-gray-700 font-medium">+977 1-4XXXXXX</span>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <div class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 flex-shrink-0">
+                                            <i class="fa-solid fa-location-dot"></i>
+                                        </div>
+                                        <div>
+                                            <p class="text-xs text-gray-500 font-semibold uppercase">Address</p>
+                                            <span class="text-sm text-gray-700 font-medium">Mid-Baneshwor, Kathmandu, Nepal</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                                
+                                <!-- Map Placeholder -->
+                                <div class="mt-6 rounded-lg overflow-hidden h-32 bg-gray-200 relative group cursor-pointer">
+                                    <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover opacity-60" alt="Map Location">
+                                    <div class="absolute inset-0 flex items-center justify-center">
+                                        <button class="bg-white px-3 py-1.5 rounded-full text-xs font-bold shadow-md hover:bg-gray-50 transition text-slate-800">
+                                            View on Google Maps
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- === CONTENT: SERVICES === -->
+                <div id="content-services" class="tab-content hidden animate-fade-in">
+                    <h2 class="text-xl font-bold text-gray-900 mb-6">What We Do</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Service 1 -->
+                        <div class="group border border-gray-200 rounded-xl p-6 hover:border-blue-500 hover:shadow-lg transition cursor-pointer bg-white">
+                            <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-600 group-hover:text-white transition">
+                                <i class="fa-solid fa-graduation-cap text-xl"></i>
+                            </div>
+                            <h3 class="font-bold text-gray-900 text-lg mb-2">Student & Career Platform</h3>
+                            <p class="text-sm text-gray-600 mb-4">A unified dashboard for learning paths, certifications, and career tracking.</p>
+                        </div>
+                        
+                        <!-- Service 2 -->
+                        <div class="group border border-gray-200 rounded-xl p-6 hover:border-indigo-500 hover:shadow-lg transition cursor-pointer bg-white">
+                            <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-lg flex items-center justify-center mb-4 group-hover:bg-indigo-600 group-hover:text-white transition">
+                                <i class="fa-solid fa-briefcase text-xl"></i>
+                            </div>
+                            <h3 class="font-bold text-gray-900 text-lg mb-2">Job & Internship Marketplace</h3>
+                            <p class="text-sm text-gray-600 mb-4">Verified opportunities connecting fresh talent with top employers.</p>
+                        </div>
+
+                        <!-- Service 3 -->
+                        <div class="group border border-gray-200 rounded-xl p-6 hover:border-teal-500 hover:shadow-lg transition cursor-pointer bg-white">
+                            <div class="w-12 h-12 bg-teal-100 text-teal-600 rounded-lg flex items-center justify-center mb-4 group-hover:bg-teal-600 group-hover:text-white transition">
+                                <i class="fa-solid fa-building-columns text-xl"></i>
+                            </div>
+                            <h3 class="font-bold text-gray-900 text-lg mb-2">College Integration</h3>
+                            <p class="text-sm text-gray-600 mb-4">Seamless integration for institutions to manage placements and alumni networks.</p>
+                        </div>
+
+                         <!-- Service 4 -->
+                         <div class="group border border-gray-200 rounded-xl p-6 hover:border-purple-500 hover:shadow-lg transition cursor-pointer bg-white">
+                            <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-600 group-hover:text-white transition">
+                                <i class="fa-solid fa-chart-pie text-xl"></i>
+                            </div>
+                            <h3 class="font-bold text-gray-900 text-lg mb-2">Data-driven Insights</h3>
+                            <p class="text-sm text-gray-600 mb-4">Advanced analytics for stakeholders to track progress and trends.</p>
+                        </div>
+
+                         <!-- Service 5 -->
+                         <div class="group border border-gray-200 rounded-xl p-6 hover:border-orange-500 hover:shadow-lg transition cursor-pointer bg-white">
+                            <div class="w-12 h-12 bg-orange-100 text-orange-600 rounded-lg flex items-center justify-center mb-4 group-hover:bg-orange-600 group-hover:text-white transition">
+                                <i class="fa-solid fa-chalkboard-user text-xl"></i>
+                            </div>
+                            <h3 class="font-bold text-gray-900 text-lg mb-2">Mentorship & Workshops</h3>
+                            <p class="text-sm text-gray-600 mb-4">Guidance from industry experts through live sessions and 1:1 mentorship.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- === CONTENT: CAREERS === -->
+                <div id="content-careers" class="tab-content hidden animate-fade-in">
+                    <!-- Why Work With Us -->
+                    <div class="bg-blue-900 rounded-xl p-8 mb-10 text-white relative overflow-hidden">
+                        <div class="relative z-10">
+                            <h2 class="text-2xl font-bold mb-3">Why Work With Us?</h2>
+                            <p class="text-blue-100 max-w-2xl mb-6">We are a people-first company that values creativity, ownership, and growth opportunities. Our culture encourages collaboration, learning, and innovation.</p>
+                            
+                            <h4 class="font-bold text-sm uppercase tracking-wider mb-4 text-blue-300">Employee Benefits</h4>
+                            <div class="flex flex-wrap gap-3">
+                                <span class="bg-white/10 backdrop-blur-sm px-3 py-1.5 rounded-lg text-sm border border-white/20">💰 Competitive Salary</span>
+                                <span class="bg-white/10 backdrop-blur-sm px-3 py-1.5 rounded-lg text-sm border border-white/20">🏡 Hybrid Work</span>
+                                <span class="bg-white/10 backdrop-blur-sm px-3 py-1.5 rounded-lg text-sm border border-white/20">🎓 Training Support</span>
+                                <span class="bg-white/10 backdrop-blur-sm px-3 py-1.5 rounded-lg text-sm border border-white/20">🚀 Performance Incentives</span>
+                            </div>
+                        </div>
+                        <div class="absolute right-0 top-0 h-full w-1/3 bg-gradient-to-l from-blue-600 to-transparent opacity-50"></div>
+                    </div>
+
+                    <!-- Hiring Process -->
+                    <div class="mb-10">
+                        <h3 class="text-lg font-bold text-gray-900 mb-6">Hiring Process</h3>
+                        <div class="flex flex-col md:flex-row justify-between items-center relative">
+                            <!-- Line -->
+                            <div class="hidden md:block absolute top-1/2 left-0 w-full h-1 bg-gray-200 -z-10 transform -translate-y-1/2"></div>
+                            
+                            <!-- Steps -->
+                            <div class="flex flex-col items-center bg-white p-2 z-10">
+                                <div class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold mb-2">1</div>
+                                <span class="text-xs font-bold text-gray-700">Application</span>
+                            </div>
+                            <div class="flex flex-col items-center bg-white p-2 z-10">
+                                <div class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold mb-2">2</div>
+                                <span class="text-xs font-bold text-gray-700">Screening</span>
+                            </div>
+                            <div class="flex flex-col items-center bg-white p-2 z-10">
+                                <div class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold mb-2">3</div>
+                                <span class="text-xs font-bold text-gray-700">Assessment</span>
+                            </div>
+                            <div class="flex flex-col items-center bg-white p-2 z-10">
+                                <div class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold mb-2">4</div>
+                                <span class="text-xs font-bold text-gray-700">Interview</span>
+                            </div>
+                            <div class="flex flex-col items-center bg-white p-2 z-10">
+                                <div class="w-10 h-10 rounded-full bg-green-100 text-green-600 flex items-center justify-center font-bold mb-2"><i class="fa-solid fa-check"></i></div>
+                                <span class="text-xs font-bold text-gray-700">Offer</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col md:flex-row justify-between items-end md:items-center mb-6 gap-4">
+                        <div>
+                            <h2 class="text-xl font-bold text-gray-900">Open Positions</h2>
+                            <p class="text-sm text-gray-500 mt-1">Join us in shaping the future of education.</p>
+                        </div>
+                        
+                        <!-- Filter Buttons -->
+                        <div class="flex gap-2 overflow-x-auto no-scrollbar w-full md:w-auto pb-2 md:pb-0">
+                            <button onclick="filterJobs('all')" class="filter-btn active bg-slate-900 text-white px-4 py-2 rounded-full text-sm font-medium transition whitespace-nowrap">All</button>
+                            <button onclick="filterJobs('engineering')" class="filter-btn bg-white border border-gray-300 text-gray-700 hover:bg-slate-50 px-4 py-2 rounded-full text-sm font-medium transition whitespace-nowrap">Engineering</button>
+                            <button onclick="filterJobs('marketing')" class="filter-btn bg-white border border-gray-300 text-gray-700 hover:bg-slate-50 px-4 py-2 rounded-full text-sm font-medium transition whitespace-nowrap">Marketing</button>
+                            <button onclick="filterJobs('partnerships')" class="filter-btn bg-white border border-gray-300 text-gray-700 hover:bg-slate-50 px-4 py-2 rounded-full text-sm font-medium transition whitespace-nowrap">Partnerships</button>
+                        </div>
+                    </div>
+
+                    <!-- Job Cards Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="job-board">
+                        
+                        <!-- Job 1 -->
+                        <div class="job-card border border-gray-200 rounded-xl p-5 hover:border-blue-400 cursor-pointer bg-white group relative flex flex-col justify-between h-full" data-dept="engineering">
+                            <div>
+                                <div class="flex justify-between items-start mb-2">
+                                    <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-0.5 rounded uppercase tracking-wide">Engineering</span>
+                                    <span class="bg-green-100 text-green-700 text-xs font-bold px-2 py-1 rounded">Urgent</span>
+                                </div>
+                                <h3 class="font-bold text-gray-900 text-lg group-hover:text-blue-600 transition">Software Engineer</h3>
+                                <p class="text-sm text-gray-500 mb-3">Kathmandu • 1-3 Years • Full-time</p>
+                                <div class="flex gap-2 mb-4 flex-wrap">
+                                    <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded font-medium">React</span>
+                                    <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded font-medium">Node.js</span>
+                                    <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded font-medium">API Integration</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center pt-4 border-t border-gray-100 mt-auto gap-2">
+                                <a href="mailto:careers@studsphere.com" class="text-sm font-bold text-gray-500 hover:text-gray-700">Email Apply</a>
+                                <button onclick="quickApply('Software Engineer')" class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1.5 rounded-lg text-sm font-bold flex items-center gap-1 transition shadow-sm">
+                                    <i class="fa-solid fa-bolt"></i> Quick Apply
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Job 2 -->
+                        <div class="job-card border border-gray-200 rounded-xl p-5 hover:border-blue-400 cursor-pointer bg-white group flex flex-col justify-between h-full" data-dept="marketing">
+                            <div>
+                                <div class="flex justify-between items-start mb-2">
+                                    <span class="bg-pink-100 text-pink-800 text-xs font-bold px-2 py-0.5 rounded uppercase tracking-wide">Marketing</span>
+                                </div>
+                                <h3 class="font-bold text-gray-900 text-lg group-hover:text-blue-600 transition">Content & Marketing Executive</h3>
+                                <p class="text-sm text-gray-500 mb-3">Hybrid • 0-2 Years</p>
+                                <div class="flex gap-2 mb-4 flex-wrap">
+                                    <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded font-medium">Content Strategy</span>
+                                    <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded font-medium">Social Media</span>
+                                    <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded font-medium">Branding</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center pt-4 border-t border-gray-100 mt-auto gap-2">
+                                <a href="mailto:hr@studsphere.com" class="text-sm font-bold text-gray-500 hover:text-gray-700">Email Apply</a>
+                                <button onclick="quickApply('Content & Marketing Executive')" class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1.5 rounded-lg text-sm font-bold flex items-center gap-1 transition shadow-sm">
+                                    <i class="fa-solid fa-bolt"></i> Quick Apply
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Job 3 -->
+                        <div class="job-card border border-gray-200 rounded-xl p-5 hover:border-blue-400 cursor-pointer bg-white group flex flex-col justify-between h-full" data-dept="partnerships">
+                            <div>
+                                <div class="flex justify-between items-start mb-2">
+                                    <span class="bg-purple-100 text-purple-800 text-xs font-bold px-2 py-0.5 rounded uppercase tracking-wide">Partnerships</span>
+                                </div>
+                                <h3 class="font-bold text-gray-900 text-lg group-hover:text-blue-600 transition">Partnership & Outreach Coordinator</h3>
+                                <p class="text-sm text-gray-500 mb-3">Nepal (Field + Remote)</p>
+                                <div class="flex gap-2 mb-4 flex-wrap">
+                                    <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded font-medium">Partnerships</span>
+                                    <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded font-medium">College Relations</span>
+                                    <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded font-medium">Onboarding</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center pt-4 border-t border-gray-100 mt-auto gap-2">
+                                <a href="mailto:hr@studsphere.com" class="text-sm font-bold text-gray-500 hover:text-gray-700">Email Apply</a>
+                                <button onclick="quickApply('Partnership Coordinator')" class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1.5 rounded-lg text-sm font-bold flex items-center gap-1 transition shadow-sm">
+                                    <i class="fa-solid fa-bolt"></i> Quick Apply
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- === CONTENT: REVIEWS === -->
+                <div id="content-reviews" class="tab-content hidden animate-fade-in">
+                    <div class="flex justify-between items-center mb-6">
+                        <div>
+                            <h2 class="text-xl font-bold text-gray-900">Employee Reviews</h2>
+                            <div class="flex items-center gap-2 mt-1">
+                                <span class="text-2xl font-bold text-gray-900">4.8</span>
+                                <div class="flex text-yellow-400 text-sm">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star-half-stroke"></i>
+                                </div>
+                                <span class="text-sm text-gray-500">(24 Reviews)</span>
+                            </div>
+                        </div>
+                        <button class="px-4 py-2 border border-gray-300 rounded-lg text-sm font-bold text-gray-700 hover:bg-gray-50 transition">Write a Review</button>
+                    </div>
+
+                    <div class="space-y-6">
+                        <!-- Review 1 -->
+                        <div class="border border-gray-200 rounded-xl p-6 bg-white">
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold">AS</div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-900 text-sm">Aarav Sharma</h4>
+                                        <p class="text-xs text-gray-500">Software Engineer • Current Employee</p>
+                                    </div>
+                                </div>
+                                <div class="flex text-yellow-400 text-xs">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                            <h3 class="font-bold text-gray-800 mb-2">Great culture and immense learning opportunities</h3>
+                            <p class="text-sm text-gray-600 mb-4">StudSphere gives you ownership from day one. The team is incredibly supportive, and we are solving real problems in education.</p>
+                            
+                            <div class="grid md:grid-cols-2 gap-4 bg-gray-50 p-4 rounded-lg">
+                                <div>
+                                    <h5 class="text-xs font-bold text-green-700 mb-2 flex items-center gap-1 uppercase tracking-wide"><i class="fa-solid fa-thumbs-up"></i> Pros</h5>
+                                    <ul class="text-sm text-gray-600 space-y-2">
+                                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-green-500 mt-1 text-xs"></i> Supportive leadership & mentorship</li>
+                                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-green-500 mt-1 text-xs"></i> Hybrid work flexibility is great</li>
+                                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-green-500 mt-1 text-xs"></i> Real impact on students' lives</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5 class="text-xs font-bold text-red-700 mb-2 flex items-center gap-1 uppercase tracking-wide"><i class="fa-solid fa-thumbs-down"></i> Cons</h5>
+                                    <ul class="text-sm text-gray-600 space-y-2">
+                                        <li class="flex items-start gap-2"><i class="fa-solid fa-xmark text-red-500 mt-1 text-xs"></i> Startup pace can be intense sometimes</li>
+                                        <li class="flex items-start gap-2"><i class="fa-solid fa-xmark text-red-500 mt-1 text-xs"></i> Need more organized documentation</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                         <!-- Review 2 -->
+                         <div class="border border-gray-200 rounded-xl p-6 bg-white">
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 font-bold">MK</div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-900 text-sm">Manish K.</h4>
+                                        <p class="text-xs text-gray-500">Marketing Executive • Former Employee</p>
+                                    </div>
+                                </div>
+                                <div class="flex text-yellow-400 text-xs">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+                                </div>
+                            </div>
+                            <h3 class="font-bold text-gray-800 mb-2">Good place to start your career</h3>
+                            <p class="text-sm text-gray-600 mb-4">Excellent place for freshers to learn multiple skills. The management listens to feedback.</p>
+                            
+                            <div class="grid md:grid-cols-2 gap-4 bg-gray-50 p-4 rounded-lg">
+                                <div>
+                                    <h5 class="text-xs font-bold text-green-700 mb-2 flex items-center gap-1 uppercase tracking-wide"><i class="fa-solid fa-thumbs-up"></i> Pros</h5>
+                                    <ul class="text-sm text-gray-600 space-y-2">
+                                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-green-500 mt-1 text-xs"></i> Lots of training sessions</li>
+                                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-green-500 mt-1 text-xs"></i> Friendly work environment</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5 class="text-xs font-bold text-red-700 mb-2 flex items-center gap-1 uppercase tracking-wide"><i class="fa-solid fa-thumbs-down"></i> Cons</h5>
+                                    <ul class="text-sm text-gray-600 space-y-2">
+                                        <li class="flex items-start gap-2"><i class="fa-solid fa-xmark text-red-500 mt-1 text-xs"></i> Salary for entry level could be higher</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- === CONTENT: LIFE AT STUDSPHERE === -->
+                <div id="content-life" class="tab-content hidden animate-fade-in">
+                    <h2 class="text-xl font-bold text-gray-900 mb-6">Gallery: Life at StudSphere</h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <!-- Gallery Item 1 -->
+                        <div class="relative group overflow-hidden rounded-xl h-64 cursor-pointer">
+                            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover transition transform group-hover:scale-110 duration-500" alt="Office">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-4">
+                                <span class="text-xs font-bold text-blue-300 uppercase">Category</span>
+                                <h4 class="text-white font-bold">Office & Workspace</h4>
+                            </div>
+                        </div>
+
+                        <!-- Gallery Item 2 -->
+                        <div class="relative group overflow-hidden rounded-xl h-64 cursor-pointer">
+                            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover transition transform group-hover:scale-110 duration-500" alt="Team">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-4">
+                                <span class="text-xs font-bold text-blue-300 uppercase">Culture</span>
+                                <h4 class="text-white font-bold">Team Activities & Events</h4>
+                                <p class="text-xs text-gray-300 mt-1">Innovation Hackathon</p>
+                            </div>
+                        </div>
+
+                        <!-- Gallery Item 3 -->
+                        <div class="relative group overflow-hidden rounded-xl h-64 cursor-pointer">
+                            <img src="https://images.unsplash.com/photo-1544531586-fde5298cdd40?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover transition transform group-hover:scale-110 duration-500" alt="Workshop">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-4">
+                                <span class="text-xs font-bold text-blue-300 uppercase">Training</span>
+                                <h4 class="text-white font-bold">Student Success Workshop</h4>
+                                <p class="text-xs text-gray-300 mt-1">Kathmandu, 2025</p>
+                            </div>
+                        </div>
+
+                        <!-- Gallery Item 4 -->
+                        <div class="relative group overflow-hidden rounded-xl h-64 cursor-pointer">
+                            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover transition transform group-hover:scale-110 duration-500" alt="Meeting">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-4">
+                                <span class="text-xs font-bold text-blue-300 uppercase">Events</span>
+                                <h4 class="text-white font-bold">Partner Institution Meet-up</h4>
+                            </div>
+                        </div>
+                         <!-- Gallery Item 5 -->
+                         <div class="relative group overflow-hidden rounded-xl h-64 cursor-pointer">
+                            <img src="https://images.unsplash.com/photo-1531545514256-b1400bc00f31?q=80&w=1974&auto=format&fit=crop" class="w-full h-full object-cover transition transform group-hover:scale-110 duration-500" alt="Field Visit">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-4">
+                                <span class="text-xs font-bold text-blue-300 uppercase">Community</span>
+                                <h4 class="text-white font-bold">Field Visits / Outreach</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Quick Apply Toast -->
+    <div id="quickToast" class="fixed bottom-4 right-4 bg-gray-900 text-white px-6 py-4 rounded-lg shadow-lg transform translate-y-20 opacity-0 transition-all duration-300 z-50 flex items-center gap-3">
+        <div class="bg-blue-500 rounded-full p-1 h-6 w-6 flex items-center justify-center">
+            <i class="fa-solid fa-bolt text-xs text-white"></i>
+        </div>
+        <div>
+            <h4 class="font-bold text-sm">Quick Apply Sent!</h4>
+            <p class="text-xs text-gray-300" id="toastMessage">Your profile has been shared.</p>
+        </div>
+    </div>
+
+    <script>
+        // Tab Switching Logic
+        function switchTab(tabId) {
+            // Hide all contents
+            document.querySelectorAll('.tab-content').forEach(el => {
+                el.classList.add('hidden');
+            });
+            // Show selected content
+            document.getElementById('content-' + tabId).classList.remove('hidden');
+
+            // Deactivate all buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            // Activate selected button
+            document.getElementById('tab-' + tabId).classList.add('active');
+        }
+
+        // Follow Button Toggle
+        function toggleFollow() {
+            const btn = document.getElementById('followBtn');
+            const icon = btn.querySelector('i');
+            const span = btn.querySelector('span');
+
+            if (btn.classList.contains('bg-blue-600')) {
+                // Switch to "Following" state
+                btn.classList.remove('bg-blue-600', 'hover:bg-blue-700', 'text-white');
+                btn.classList.add('bg-white', 'border', 'border-blue-600', 'text-blue-600', 'hover:bg-blue-50');
+                span.textContent = 'Following';
+                icon.className = 'fa-solid fa-check';
+            } else {
+                // Revert to "Follow"
+                btn.classList.add('bg-blue-600', 'hover:bg-blue-700', 'text-white');
+                btn.classList.remove('bg-white', 'border', 'border-blue-600', 'text-blue-600', 'hover:bg-blue-50');
+                span.textContent = 'Follow';
+                icon.className = 'fa-solid fa-plus';
+            }
+        }
+
+        // Job Filtering Logic
+        function filterJobs(category) {
+            // Update buttons state
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active', 'bg-slate-900', 'text-white');
+                btn.classList.add('bg-white', 'text-gray-700', 'border');
+            });
+            
+            // Highlight active button
+            const activeBtn = Array.from(document.querySelectorAll('.filter-btn'))
+                .find(b => b.textContent.toLowerCase().includes(category) || (category === 'all' && b.textContent === 'All'));
+            
+            if(activeBtn) {
+                activeBtn.classList.remove('bg-white', 'text-gray-700', 'border');
+                activeBtn.classList.add('bg-slate-900', 'text-white');
+            }
+
+            // Filter the cards
+            const jobs = document.querySelectorAll('.job-card');
+            jobs.forEach(job => {
+                if (category === 'all' || job.dataset.dept === category) {
+                    job.classList.remove('hidden');
+                } else {
+                    job.classList.add('hidden');
+                }
+            });
+        }
+
+        // Quick Apply Logic
+        function quickApply(jobTitle) {
+            const toast = document.getElementById('quickToast');
+            const msg = document.getElementById('toastMessage');
+            
+            msg.textContent = `Applied to ${jobTitle} successfully!`;
+            
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
